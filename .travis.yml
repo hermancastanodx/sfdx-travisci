@@ -24,5 +24,15 @@ script:
 - sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg --wait 7
 - sfdx force:org:display -u ciorg
 - sfdx force:source:push -u ciorg
+
+- sfdx force:package:install -i 04t50000000cSq7AAE -u ciorg -w 10
+- sfdx force:package:install -i 04t80000001AWUFAA4 -u ciorg -w 10
+- sfdx force:package:install -i 04t80000000gZTWAA2 -u ciorg -w 10
+- sfdx force:package:install -i 04t80000000tqAcAAI -u ciorg -w 10
+- sfdx force:package:install -i 04t80000000lTMlAAM -u ciorg -w 10
+- sfdx force:package:install -i 04t80000000y8kRAAQ -u ciorg -w 10
+- sfdx force:package:install -i 04ti0000000GSu9AAG -u ciorg -w 10
+- sfdx force:package:install -i 04t1Y0000011SYRQA2 -u ciorg -w 10
+
 - sfdx force:apex:test:run -u ciorg --wait 10
 - sfdx force:org:delete -u ciorg -p
